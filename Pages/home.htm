@@ -1,0 +1,13 @@
+<div id="home" ng-controller="homeControl">
+		<div class="home_box container">
+			<div ng-repeat='event in events' ng-if="event.title" class="block1 col-md-3 col-md-offset-1">
+				<div><h4><a ng-href="#!/event/{{event.id}}">Title : {{event.title}}</a></h4></div>
+				<h5>{{event.date}}</h5></br>
+				<div><h4>By : {{event.organiser}}</h4></div>
+				<h5>Rs.{{event.price}}</h5>
+			</div>
+			<div id="addEvent" class="block1 col-md-3 col-md-offset-1">
+				<h2>Add Event</h2>
+			</div>
+		</div>
+	</div>

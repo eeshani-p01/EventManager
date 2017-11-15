@@ -1,33 +1,57 @@
-
-var eventApp = angular.module('EventApp',['ngRoute']);  //ngRoute is additional functionality and this are called as module
+var eventApp = angular.module('eventApp',['ngRoute']);
 
 eventApp.config(function($routeProvider){
-  $routeProvider            //and object defined in ngroute
-  .when('/',{
-    templateUrl:'index.html',       //show this template when url is "www.....com/"
-    controller:"eventController"          //and this controller is to be used with this view
-  })
+	$routeProvider
+	.when('/',{
+		templateUrl:'Pages/home.htm',
+		controller: 'homeControl'
+	})
+	.when('/event/:id',{
+		templateUrl:'Pages/event.htm',
+		controller:'eventControl'
+	})
 
 })
-eventApp.controller('eventController',function($scope,$http){
-    $scope.array=[];
-    $http({
-        'method': 'GET',
-        'url': 'http://eventmanager-server.herokuapp.com/events',
-        'headers':'Content-Type:application/json',
-        'headerData': [{
-          "key":"d681cbb9-fb83-1f2e-746a-57da0f33ef98",
-          "value":"application/json",
-          "description":"",
-          "enabled":true
-        }]
-      }).then(
-        function (response) {
-            console.log(response)
-          },
 
-        function(xhr){
-                console.log(xhr)
-          });
+eventApp.controller('homeControl',function($scope,$http){
+	$scope.events = [];
+	$http({
+		'method' : 'GET',
+		'url' : 'http://eventmanager-server.herokuapp.com/events',
+		'headers': 'Content-Type: application/json\n',
+		"headerData": [
+					{
+						"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
+						"value": "application/json",
+						"description": "",
+						"enabled": true
+					}
+				]
+	}).then(function(response){
+		$scope.events = response.data;
+	},function(xhr){
+		console.log(xhr)
+	})
+})
 
+eventApp.controller('eventControl',function($scope,$routeParams,$http){
+	var id = $routeParams.id;
+	$scope.eventDetails = [];
+	$http({
+		'method' : 'GET',
+		'url' : 'http://eventmanager-server.herokuapp.com/events',
+		'headers': 'Content-Type: application/json\n',
+		"headerData": [
+					{
+						"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
+						"value": "application/json",
+						"description": "",
+						"enabled": true
+					}
+				]
+	}).then(function(response){
+		$scope.eventDetails = response.data[id-1];
+	},function(xhr){
+		console.log(xhr)
+	})
 })
