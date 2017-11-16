@@ -311,3 +311,10 @@ color:gray;
 	color: white;
 	text-align: center;
 }
+/*/Page not found*/
+.error{
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 100px;
+	text-align: center;
+}
