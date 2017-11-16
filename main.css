@@ -20,7 +20,6 @@ h5{
 	width: 28%;
 }
 .home_box{
-	margin-top: 80px;
 	padding-left:50px;
 	/*padding-left: 0%;*/
 }
@@ -92,6 +91,30 @@ h5{
 	font-weight: bold;
 
 	/*margin-top: -50px;*/
+}
+.search-bar {
+		margin-top: 50px;
+    min-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    display: flex;
+		background-color: white;
+    padding-left:22%;
+    padding-right: 22%;
+    padding-top:1%;
+    padding-bottom: 0.6%;
+		border-bottom: 1px solid #e3e3e3;
+    /*width: 60%;*/
+}
+.search-bar form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.search-bar form .input-wrapper {
+   flex: 1;
+   margin-right: 1rem;
 }
 #singleEvent{
 	height: 50vh;
