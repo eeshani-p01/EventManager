@@ -57,6 +57,16 @@ h5{
 	border-top-right-radius: 10px;
 
 }
+.collapse .nav .glyphicon{
+	color:white;
+	font-size: 20px;
+	margin-right: 50px;
+}
+.collapse .nav .glyphicon:hover{
+	opacity: 0.8;
+	text-shadow: 1px -1px 1px white;
+	/*font-size: 22px;*/
+}
 #addEvent{
 	border-radius: 2px;
 	border: 1.4px solid white;
