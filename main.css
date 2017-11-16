@@ -34,11 +34,19 @@ h5{
 
 }
 #addEvent{
-	background-color: salmon;
+	/*background-color: salmon;*/
+	background-color: rgba(0,255,150,0.9);
+	border-radius: 10px;
+}
+#addEvent a{
+	color:white;
+	text-align: center;
+	margin-top: -50px;
+
 }
 #singleEvent{
 	height: 50vh;
-	background-color: plum;
+	/*background-color:;*/
 }
 .home_box container{
 	width: 100%;
@@ -86,5 +94,16 @@ color:gray;
 .dialog{
 	width:30%;
 	height: 100%;
+	/*margin:0%;*/
+	margin:20%;
+	margin-top: 10%;
+
+}
+/*Event details*/
+#event .container{
 	margin:10%;
+
+}
+#event .info{
+	margin:4%;
 }

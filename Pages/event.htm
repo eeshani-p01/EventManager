@@ -1,19 +1,22 @@
 <div id="event" ng-controller="eventControl">
   <div id="singleEvent" class="container" ng-if="eventDetails.title">
-    <div>{{eventDetails.title}}</div>
-    <div>{{eventDetails.date}}</div>
-    <div>{{eventDetails.organiser}}</div>
-    <div>{{eventDetails.price}}</div>
+    <div><img class="image" src="http://www.roha-bremen.com/typo3conf/ext/auw_viewhelper/Resources/Public/Img/placeholder.png" width="92%" height="300px" alt="..."></div>
+    <div class="info">
+      <div>{{eventDetails.title}}</div>
+      <div>{{eventDetails.date}}</div>
+      <div>{{eventDetails.organiser}}</div>
+      <div>{{eventDetails.price}}</div>
+    </div>
     <div class="panel-footer">
-          <div class="media">               <!--Comments sections started-->
+          <div ng-repeat="comment in comments" class="media" ng-if="comments">               <!--Comments sections started-->
             <div class="media-left">
               <a href="#">
-                <img class="media-object" src="https://scontent.fagr1-1.fna.fbcdn.net/v/t1.0-9/17353374_126225361241322_8109964136275967067_n.jpg?oh=cd3a4ab799f62d233d7fa4db80e9fb3d&oe=599D5D2A" width="32px" height="32px" alt="...">
+                <!-- <img class="media-object" src="https://scontent.fagr1-1.fna.fbcdn.net/v/t1.0-9/17353374_126225361241322_8109964136275967067_n.jpg?oh=cd3a4ab799f62d233d7fa4db80e9fb3d&oe=599D5D2A" width="32px" height="32px" alt="..."> -->
               </a>
             </div>
-            <div class="media-body">
+              <div class="media-body">
                   <p  class="comment"><span class="media-heading" style="font-weight:bold;">
-                    <a href="#">Chesta Shah </a></span>We are waiting.......... ;)
+                    <a href="#">{{comment.id}} . </a></span>{{comment.body}}
                   </p>
                     <div>
                       <span style="font-weight:normal;">
@@ -22,12 +25,12 @@
                       </span>
                       <span>  Just Now</span>
                     </div>
-            </div>
-
+                  </div>
+              </div>
             <div class="media">
               <div class="media-left">
                 <a href="#">
-                  <img class="media-object" src="images/eeshani.jpg" alt="..."width="32px" height="32px">
+                  <!-- <img class="media-object" src="images/eeshani.jpg" alt="..."width="32px" height="32px"> -->
                 </a>
               </div>
               <div class="media-body">
@@ -35,5 +38,6 @@
               </div>
             </div>
           </div>
-  </div>
+        </div>
+  <div></div>
 </div>
