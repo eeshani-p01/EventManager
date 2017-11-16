@@ -18,10 +18,14 @@
                   </a>
                 </div>
                 <div class="media-body">
-                      <input required="" placeholder="Write a comment..." style="width:100%;">
-                      <a href= "#!/event/{{eventDetails.id}}">
-                        <button type="submit" class="btn btn-primary" ng-click="comment()">Comment</button>
-                      </a>
+                  <form name="rev">
+                    <div class="form-group">
+                        <input class="form-control" required="" required name="comment" ng-model="user.comment" placeholder="Write a comment..." style="width:100%;">
+                        <a href= "#!/event/{{eventDetails.id}}">
+                          <button type="submit" class="btn btn-primary" ng-disabled="rev.$invalid" ng-click="comment()">Comment</button>
+                        </a>
+                      </div>
+                    </form>
                 </div>
               </div>
               <div id="comm" ng-repeat="comment in comments" class="media" ng-if="comments">               <!--Comments sections started-->
