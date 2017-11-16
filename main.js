@@ -115,6 +115,7 @@ eventApp.controller('eventControl',function($scope,$routeParams,$http){
 				},function(xhr){
 					console.log(xhr)
 				})
+				// location.reload(true)
 			}
 			// $http({
 			// 	'method' : 'POST',
@@ -170,5 +171,8 @@ eventApp.controller('addeventControl',function($scope,$http){
 			},function(xhr){
 				console.log(xhr)
 			})
+
+
 	}
+
 })

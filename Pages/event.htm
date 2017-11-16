@@ -19,7 +19,9 @@
                 </div>
                 <div class="media-body">
                       <input placeholder="Write a comment..." style="width:100%;">
-                      <button type="submit" class="btn btn-primary" ng-click="comment()">Comment</button>
+                      <a href= "#!/event/{{eventDetails.id}}">
+                        <button type="submit" class="btn btn-primary" ng-click="comment()">Comment</button>
+                      </a>
                 </div>
               </div>
               <div id="comm" ng-repeat="comment in comments" class="media" ng-if="comments">               <!--Comments sections started-->
@@ -39,7 +41,7 @@
               </div>
             </div>
     <div class="col-md-4">
-      
+
     </div>
   </div>
   <div></div>
