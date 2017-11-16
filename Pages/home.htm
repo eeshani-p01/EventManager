@@ -2,7 +2,7 @@
 		<div class="home_box container">
 			<div ng-repeat='event in events' ng-if="event.title" class="block1 col-md-3 col-md-offset-1">
 				<a ng-href="#!/event/{{event.id}}">
-				<div><img class="image" src="http://www.roha-bremen.com/typo3conf/ext/auw_viewhelper/Resources/Public/Img/placeholder.png" width="100%" height="50%" alt="..."></div>
+				<div><img class="image" src="http://www.roha-bremen.com/typo3conf/ext/auw_viewhelper/Resources/Public/Img/placeholder.png" width="100%" height="40%" alt="..."></div>
 				<div id="post">
 					<div class="editevent">
 						<div class="info">
@@ -14,9 +14,6 @@
 					<div class="organizer">Event Host : {{event.organiser}}</div>
 			</div>
 			</a>
-			</div>
-			<div id="addEvent" class="block1 col-md-3 col-md-offset-1">
-				<a href="#!/addevent"><h2>+ Add Event</h2></a>
 			</div>
 		</div>
 	</div>

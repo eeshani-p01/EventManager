@@ -73,13 +73,13 @@ eventApp.controller('eventControl',function($scope,$routeParams,$http){
 						]
 			}).then(function(response){
 				var value = response.data;
-				console.log(value)
+				// console.log(value)
 				for(var i=0;i<value.length;i++)
 				{
 					if(value[i].postId==id)
 					{
 						$scope.comments.push(value[i])
-						console.log(value[i])
+						// console.log(value[i])
 					}
 				}
 				// console.log(response.data.comments[0].id)
