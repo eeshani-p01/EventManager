@@ -82,3 +82,9 @@ color:gray;
 	padding-bottom: 4px;
 	padding-top: 4px;
 }
+/*dialog*/
+.dialog{
+	width:30%;
+	height: 100%;
+	margin:10%;
+}
