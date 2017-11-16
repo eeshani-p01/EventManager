@@ -42,43 +42,98 @@ eventApp.controller('eventControl',function($scope,$routeParams,$http){
 	var id = $routeParams.id;
 	$scope.eventDetails = [];
 	$scope.comments=[];
-	$http({
-		'method' : 'GET',
-		'url' : 'http://eventmanager-server.herokuapp.com/events',
-		'headers': 'Content-Type: application/json\n',
-		"headerData": [
+			$http({
+				'method' : 'GET',
+				'url' : 'http://eventmanager-server.herokuapp.com/events',
+				'headers': 'Content-Type: application/json\n',
+				"headerData": [
+							{
+								"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
+								"value": "application/json",
+								"description": "",
+								"enabled": true
+							}
+						]
+			}).then(function(response){
+				$scope.eventDetails = response.data[id-1];
+			},function(xhr){
+				console.log(xhr)
+			})
+			$http({
+				'method' : 'GET',
+				'url' : "http://eventmanager-server.herokuapp.com/comments",
+				'headers': 'Content-Type: application/json\n',
+				"headerData": [
+							{
+								"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
+								"value": "application/json",
+								"description": "",
+								"enabled": true
+							}
+						]
+			}).then(function(response){
+				var value = response.data;
+				console.log(value)
+				for(var i=0;i<value.length;i++)
+				{
+					if(value[i].postId==id)
 					{
-						"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
-						"value": "application/json",
-						"description": "",
-						"enabled": true
+						$scope.comments.push(value[i])
+						console.log(value[i])
 					}
-				]
-	}).then(function(response){
-		$scope.eventDetails = response.data[id-1];
-	},function(xhr){
-		console.log(xhr)
-	})
-	var url='http://eventmanager-server.herokuapp.com/events/'+id+'?_embed=comments';
-	$http({
-		'method' : 'GET',
-		'url' : url,
-		'headers': 'Content-Type: application/json\n',
-		"headerData": [
-					{
-						"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
-						"value": "application/json",
-						"description": "",
-						"enabled": true
-					}
-				]
-	}).then(function(response){
-		$scope.comments = response.data.comments;
-		console.log(response.data.comments[0].id)
-		// console.log('comments')
-	},function(xhr){
-		console.log(xhr)
-	})
+				}
+				// console.log(response.data.comments[0].id)
+				// console.log('comment
+			},function(xhr){
+				console.log(xhr)
+			})
+
+			$scope.comment=function(){
+				var text=$('.media.make_comment .media-body input').val();
+				// console.log(text)
+				var data1 = {
+					"body":text,
+					"postId": id
+				}
+				// console.log(data1)
+				$http({
+					'method' : 'POST',
+					'url' : 'http://eventmanager-server.herokuapp.com/comments',
+					'headers': 'Content-Type: application/json\n',
+					"headerData": [
+								{
+									"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
+									"value": "application/json",
+									"description": "",
+									"enabled": true
+								}
+							],
+					'data':data1
+				}).then(function(response){
+					$scope.comments = response.data.comments;
+					console.log(response.data)
+				},function(xhr){
+					console.log(xhr)
+				})
+			}
+			// $http({
+			// 	'method' : 'POST',
+			// 	'url' : 'http://eventmanager-server.herokuapp.com/comments',
+			// 	'headers': 'Content-Type: application/json\n',
+			// 	"headerData": [
+			// 				{
+			// 					"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
+			// 					"value": "application/json",
+			// 					"description": "",
+			// 					"enabled": true
+			// 				}
+			// 			],
+			// 	'data':data1
+			// }).then(function(response){
+			// 	$scope.events = response.data;
+			// },function(xhr){
+			// 	console.log(xhr)
+			// })
 })
 
 eventApp.controller('addeventControl',function($scope,$http){
