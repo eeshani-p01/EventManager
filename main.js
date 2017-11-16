@@ -137,6 +137,7 @@ eventApp.controller('eventControl',function($scope,$routeParams,$http){
 })
 
 eventApp.controller('addeventControl',function($scope,$http){
+	$('.dialog #dial').addClass('animated zoomIn');
 	$scope.sendata=function(){
 	// console.log("hello")
 		var title =  $('.dialog #title').val();

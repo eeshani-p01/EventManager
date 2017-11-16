@@ -128,14 +128,44 @@ color:gray;
 	padding-bottom: 14px;
 	padding-top: 5px;
 }
+.media-body .input-group #sizing-addon1{
+	/*color:yellow;*/
+	height:200%;
+	/*width: 10%;*/
+}
 /*dialog*/
-.dialog{
+.back{
+	background: url("https://ak7.picdn.net/shutterstock/videos/3191017/thumb/1.jpg");
+	background-size: cover;
+	height: 100vh;
+	-webkit-filter: blur(10px);
+  -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: blur(15px);
+	position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+}
+.dialog #dial{
+	border: 1px solid red;
 	width:30%;
-	height: 100%;
-	/*margin:0%;*/
-	margin:20%;
-	margin-top: 10%;
+	position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
 
+	/*height: 80%;*/
+	/*margin:0%;*/
+	/*padding:10%;*/
+	/*margin-top: 10%;*/
+}
+#dial{
+	margin:10%;
+	margin-left: 30%;
+	position: absolute;
 }
 /*Event details*/
 #event .container{
@@ -159,6 +189,8 @@ color:gray;
 	background-color:white;
 	display: flex;
 	border-left: 5px solid rgba(51,122,183,1);
+	border-bottom: 1px solid #d3d3d3;
+
 }
 #event .info #title{
 	font-size: 30px;
@@ -187,7 +219,7 @@ color:gray;
 	/*background-color: #;*/
 	margin-top: 20px;
 	margin-bottom: 20px;
-
+	border-bottom: 1px solid #d3d3d3;
 }
 .media.make_comment{
 	margin-bottom: 20px;
@@ -205,6 +237,13 @@ color:gray;
 	border: 1px solid #d5d5d5;
 	padding: 6px;
 	margin-bottom: 10px;
+}
+#comm.media .media-body{
+	border-bottom: 1px solid #d3d3d3;
+
+}
+#comm.media{
+	padding-left:3%;
 }
 .row .col-md-4{
 	/*margin:auto;*/
