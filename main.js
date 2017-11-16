@@ -151,26 +151,26 @@ eventApp.controller('addeventControl',function($scope,$http){
 			"price":prize,
 			"organiser":org
 		}
-		console.log(data1)
+		// console.log(data1)
 
-			$http({
-				'method' : 'POST',
-				'url' : 'http://eventmanager-server.herokuapp.com/events',
-				'headers': 'Content-Type: application/json\n',
-				"headerData": [
-							{
-								"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
-								"value": "application/json",
-								"description": "",
-								"enabled": true
-							}
-						],
-				'data':data1
-			}).then(function(response){
-				$scope.events = response.data;
-			},function(xhr){
-				console.log(xhr)
-			})
+			// $http({
+			// 	'method' : 'POST',
+			// 	'url' : 'http://eventmanager-server.herokuapp.com/events',
+			// 	'headers': 'Content-Type: application/json\n',
+			// 	"headerData": [
+			// 				{
+			// 					"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
+			// 					"value": "application/json",
+			// 					"description": "",
+			// 					"enabled": true
+			// 				}
+			// 			],
+			// 	'data':data1
+			// }).then(function(response){
+			// 	$scope.events = response.data;
+			// },function(xhr){
+			// 	console.log(xhr)
+			// })
 
 
 	}

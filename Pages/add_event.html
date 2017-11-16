@@ -1,30 +1,31 @@
 <div id="addevent" ng-controller="addeventControl">
   <div class="back"></div>
   <div class="dialog">
-    <form id ="dial">
+    <form id ="dial" name="addeve">
       <div id="head">
         <h2>Your Event </h2>
       </div>
       <div class="form-group">
         <label for="title">Event Name:</label>
-        <input type="text" class="form-control" id="title" placeholder="Enter your event name" name="title">
+        <input type="text" class="form-control" id="title" required placeholder="Enter your event name" name="title" ng-model="eve.title">
         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email w</small> -->
       </div>
       <div class="form-group">
         <label for="date">Event On:</label>
-        <input type="text" class="form-control" id="date" placeholder="Enter the event date" name="date">
+        <input type="text" class="form-control" id="date" required placeholder="Enter the event date" name="date" ng-model="eve.date">
+        <!-- <div ng-show="addeve.date.$error.required">Required!</div> -->
       </div>
       <div class="form-group">
         <label for="cost">Cost of event:</label>
-        <input type="text" class="form-control" id="cost" placeholder="Enter the ticket price" name="price">
+        <input type="text" class="form-control" id="cost" required placeholder="Enter the ticket price" name="price" ng-model="eve.price">
         <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email w</small> -->
       </div>
       <div class="form-group">
         <label for="host">Event host:</label>
-        <input type="text" class="form-control" id="host" placeholder="Enter the name of organizer" name="organizer">
+        <input type="text" class="form-control" id="host" required placeholder="Enter the name of organizer" name="organizer" ng-model="eve.organizer">
       </div>
-      <a href="#!/">
-        <button type="submit" class="btn btn-primary" ng-click="sendata()">Submit</button>
+      <a href="#!/" ng-disabled="LoginForm.$invalid">
+        <button type="submit" class="btn btn-primary" ng-disabled="addeve.$invalid" ng-click="sendata()">Submit</button>
       </a>
       </form>
     </div>

@@ -172,6 +172,12 @@ color:gray;
 	/*width: 10%;*/
 }
 /*dialog*/
+#dial input.ng-invalid.ng-touched.ng-pristine{
+  border:1px solid red;
+}
+#dial input.ng-valid{
+  border:1px solid green;
+}
 .back{
 	background: url("https://ak7.picdn.net/shutterstock/videos/3191017/thumb/1.jpg");
 	background-size: cover;
