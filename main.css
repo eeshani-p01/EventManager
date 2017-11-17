@@ -31,6 +31,11 @@ h5{
 	.dialog #dial{
 		margin: 8%;
 	}
+	#event .row{
+		margin:15px;
+		margin-top: 70px;
+		/*background-color: yellow;*/
+	}
 }
 @media only screen and (min-width:1130px){
 	body{
@@ -64,6 +69,26 @@ h5{
 	}
 	#home nav{
 		padding-left: 22%;
+	}
+	.row .col-sm-12{
+		/*width:100%;*/
+		/*background-color: yellow;*/
+		padding: 0;
+		margin:0;
+	}
+	#event .row{
+		/*margin:45px;*/
+		/*margin-top: 80px;*/
+		margin-top: 50px;
+		position: relative;
+	}
+	.row .eventlist{
+		bottom:0px;
+		position: absolute;
+	}
+	.row .container{
+		top:0px;
+		position: absolute;
 	}
 }
 @media only screen and (max-width: 405px){
@@ -347,15 +372,9 @@ color:gray;
 	position: absolute;
 
 }
-#event .row{
-	margin:45px;
-	margin-top: 80px;
-	display: flex;
-}
+
 .row .col-md-8{
-	margin-right: 15px;
 	/*background-color: yellow;*/
-	width:80%;
 	/*display:inline;*/
 }
 .panel-footer{
