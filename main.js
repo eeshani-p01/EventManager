@@ -33,6 +33,8 @@ eventApp.controller('homeControl',function($scope,$http){
 				]
 	}).then(function(response){
 		$scope.events = response.data;
+		// $scope.events.length=6;
+				// console.log($scope.events.length)
 	},function(xhr){
 		console.log(xhr)
 	})

@@ -15,13 +15,63 @@ h5{
 .container{
 	margin:auto;
 }
-.block1.col-md-3{
-	margin:28px;
-	width: 28%;
+
+@media only screen and (min-width: 1000px){
+	.block1.col-md-3{
+		width: 38%;
+	}
+	#home nav{
+		padding-left: 32%;
+	}
 }
-.home_box{
-	padding-left:50px;
-	/*padding-left: 0%;*/
+@media only screen and (min-width:1130px){
+	body{
+		/*background-color: yellow;*/
+	}
+	.block1.col-md-3{
+		margin:28px;
+		width: 28%;
+	}
+	.home_box{
+		padding-left:50px;
+		/*padding-left: 0%;*/
+	}
+}
+@media only screen and (max-width: 1000px){
+	.block1.col-md-3{
+		width: 100%;
+	}
+	.home_box.container{
+		padding: 0;
+	}
+	#home nav{
+		padding-left: 22%;
+	}
+}
+
+@media only screen and (max-width: 405px){
+	.navbar-header a{
+		top:0;
+		position: absolute;
+		font-size: 12px;
+		width: 80%;
+		color:yellow;
+		/*background-color: yellow;*/
+	}
+	.navbar{
+		height: 19%;
+	}
+}
+@media only screen and (max-width:550px){
+	.header .search-bar{
+		padding-left:1%;
+		padding-right: 1%;
+		padding-top: 4%;
+	}
+	.search-bar form .input-wrapper {
+	   margin-right: 0px;
+		 padding-right: 0px;
+	}
 }
 .navbar{
 	border: 0;
@@ -94,9 +144,11 @@ h5{
 }
 .search-bar {
 		margin-top: 50px;
-    min-width: 640px;
+    /*min-width: 640px;*/
     margin-left: auto;
     margin-right: auto;
+		position: relative;
+		z-index:1;
     margin-bottom: 2rem;
     display: flex;
 		background-color: white;
@@ -121,7 +173,10 @@ h5{
 
 	/*background-color:;*/
 }
-
+#home nav ul{
+	padding-left: 22%;
+	padding-right: 22%;
+}
 .home_box.container{
 	width: 100%;
 }
