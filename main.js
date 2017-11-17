@@ -3,15 +3,15 @@ var eventApp = angular.module('eventApp',['ngRoute']);
 eventApp.config(function($routeProvider){
 	$routeProvider
 	.when('/',{
-		templateUrl:'Pages/home.htm',
+		templateUrl:'home.htm',
 		controller: 'homeControl'
 	})
 	.when('/addevent',{
-		templateUrl:'Pages/add_event.html',
+		templateUrl:'add_event.html',
 		controller: 'addeventControl'
 	})
 	.when('/event/:id',{
-		templateUrl:'Pages/event.htm',
+		templateUrl:'event.htm',
 		controller:'eventControl'
 	})
 

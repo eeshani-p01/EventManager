@@ -15,12 +15,25 @@ h5{
 .container{
 	margin:auto;
 }
-
-@media only screen and (min-width:550px){
+@media only screen and (min-width:400px){
 		.dialog #dial{
-			margin:17%;
+			/*height:82%;*/
+			padding: 2%;
 		}
 	}
+@media only screen and (min-width:550px){
+		.dialog #dial{
+			margin:11%;
+			/*height:87%;*/
+		}
+	}
+@media only screen and (min-width: 768px){
+	.dialog #dial{
+		margin:7%;
+		/*height:87%;*/
+		padding-top: 0px;
+	}
+}
 @media only screen and (min-width: 1000px){
 	.block1.col-md-3{
 		width: 38%;
@@ -28,9 +41,15 @@ h5{
 	#home nav{
 		padding-left: 32%;
 	}
-	.dialog #dial{
+	/*.dialog #dial{
 		margin: 8%;
-	}
+	}*/
+	.dialog #dial{
+		width:30%;
+		margin:6%;
+		margin-left: 33%;
+		/*margin-bottom: 5%;*/
+			}
 	#event .row{
 		margin:15px;
 		margin-top: 70px;
@@ -42,14 +61,9 @@ h5{
 		/*background-color: yellow;*/
 	}
 
-	.dialog #dial{
-		width:30%;
-		margin:8%;
-		margin-left: 33%;
-		/*margin-bottom: 5%;*/
-			}
+
 		.dialog #dial h3{
-			font-size: 50px;
+			font-size: 40px;
 	}
 	.block1.col-md-3{
 		margin:28px;
@@ -92,19 +106,29 @@ h5{
 	}
 }
 @media only screen and (max-width: 405px){
+	
 	.navbar-header a{
 		top:0;
 		position: absolute;
 		font-size: 12px;
 		width: 80%;
-		color:yellow;
+		/*color:yellow;*/
 		/*background-color: yellow;*/
 	}
+	/*#home nav ul{
+		padding-left: 0;
+		padding-right: 202%;
+	}*/
+	.navbar-header button{
+		border:0;
+		padding-right: 10%;
+	}
 	.navbar{
-		height: 19%;
+		height: 17%;
 	}
 	.dialog #dial{
 		margin-top:30%;
+		padding: 4%;
 	}
 	#dial input{
 		height: 22px;
@@ -157,14 +181,40 @@ h5{
 	border-top-right-radius: 10px;
 
 }
+.navbar-header button{
+	padding-bottom: 8px;
+	padding-top:4px;
+}
+.navbar-header button:hover{
+	opacity: 0.8;
+}
+.collapse #imghome{
+	right:0;
+	/*position: absolute;*/
+}
+.collapse .imghome img{
+	/*background-color: yellow;*/
+	/*padding-right:20px;*/
+	height: 24px;
+}
+.imghome img{
+	/*background-color: yellow;*/
+	/*padding-right:20px;*/
+	height: 30px;
+}
 .collapse .nav .glyphicon{
 	color:white;
 	font-size: 20px;
 	margin-right: 50px;
 }
-.collapse .nav .glyphicon:hover{
+.collapse .nav{
+	margin-right: 0;
+	padding-right: 0;
+	right: 0;
+	left:0;
+}
+.collapse .imghome img:hover{
 	opacity: 0.8;
-	text-shadow: 1px -1px 1px white;
 	/*font-size: 22px;*/
 }
 #addEvent{
@@ -225,7 +275,7 @@ h5{
 	/*background-color:;*/
 }
 #home nav ul{
-	padding-left: 22%;
+	padding-left: 13%;
 	padding-right: 22%;
 }
 .home_box.container{
@@ -310,7 +360,6 @@ color:gray;
   left: 0;
   right: 0;
   z-index: 9999;
-	padding: 4%;
 	/*height: 80%;*/
 	/*margin:0%;*/
 	/*padding:10%;*/
