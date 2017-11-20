@@ -1,4 +1,5 @@
-EventManager
+EventManager : www.codedot.in
+
 - Can view all the events (with pagination)
 - Can view details of each event by clicking on them
 - Can filter the events through search bar
