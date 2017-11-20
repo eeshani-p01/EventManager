@@ -1,4 +1,6 @@
+<!-- For initial view of all events : The Home Page  -->
 <div id="home"  ng-controller="pagesControl">
+  <!-- Search Bar Division -->
 		<div class="header">
 			<div class="search-bar">
             <form>
@@ -9,6 +11,7 @@
           </form>
         </div>
 			</div>
+      <!-- repeated div for every event details -->
 		<div class="home_box container" ng-if="events">
 			<div ng-repeat='event in events| filter:query'  class="block1 col-md-3 col-md-offset-1">
 				<a ng-href="#!/event/{{event.id}}">
@@ -26,6 +29,7 @@
 				</a>
 			</div>
 		</div>
+    <!-- div for error handling -->
     <div ng-hide="events">
 	      <div class="error">
 	        <img src="https://ih1.redbubble.net/image.101121317.0149/flat,800x800,070,f.u2.jpg" width="22%" height="30%">
@@ -33,6 +37,7 @@
 	        <h4>This is not webpage you are looking for</h4>
 	      </div>
 	  </div>
+    <!-- pagination div -->
 		<div>
 		<nav aria-label="Page navigation">
 			<ul class="pagination justify-content-center">
