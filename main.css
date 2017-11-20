@@ -81,6 +81,10 @@ h5{
 	.home_box.container{
 		padding: 0;
 	}
+
+	.navbar{
+		height: 10%;
+	}
 	#home nav{
 		padding-left: 22%;
 	}
@@ -106,7 +110,7 @@ h5{
 	}
 }
 @media only screen and (max-width: 405px){
-	
+
 	.navbar-header a{
 		top:0;
 		position: absolute;
@@ -122,9 +126,6 @@ h5{
 	.navbar-header button{
 		border:0;
 		padding-right: 10%;
-	}
-	.navbar{
-		height: 17%;
 	}
 	.dialog #dial{
 		margin-top:30%;
@@ -182,8 +183,8 @@ h5{
 
 }
 .navbar-header button{
-	padding-bottom: 8px;
-	padding-top:4px;
+	padding-bottom: 2px;
+	padding-top:2px;
 }
 .navbar-header button:hover{
 	opacity: 0.8;
@@ -274,9 +275,9 @@ h5{
 
 	/*background-color:;*/
 }
-#home nav ul{
+#home nav .pagination{
 	padding-left: 13%;
-	padding-right: 22%;
+	padding-right:22%;
 }
 .home_box.container{
 	width: 100%;
@@ -286,7 +287,6 @@ h5{
 	border-bottom: 1px solid lightgray;
 	padding-left: 10px;
 	width: 100%;
-
 }
 .editevent .info{
 	padding-right: 6%;

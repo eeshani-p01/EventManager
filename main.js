@@ -3,12 +3,16 @@ var eventApp = angular.module('eventApp',['ngRoute']);
 eventApp.config(function($routeProvider){
 	$routeProvider
 	.when('/',{
-		templateUrl:'home.htm',
-		controller: 'homeControl'
+		templateUrl:'pages.html',
+		controller: 'pagesControl'
 	})
 	.when('/addevent',{
 		templateUrl:'add_event.html',
 		controller: 'addeventControl'
+	})
+	.when('/pages/:id1',{
+		templateUrl:'pages.html',
+		controller: 'pagesControl'
 	})
 	.when('/event/:id',{
 		templateUrl:'event.htm',
@@ -17,28 +21,30 @@ eventApp.config(function($routeProvider){
 
 })
 
-eventApp.controller('homeControl',function($scope,$http){
-	$scope.events = [];
-	$http({
-		'method' : 'GET',
-		'url' : 'http://eventmanager-server.herokuapp.com/events',
-		'headers': 'Content-Type: application/json\n',
-		"headerData": [
-					{
-						"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
-						"value": "application/json",
-						"description": "",
-						"enabled": true
-					}
-				]
-	}).then(function(response){
-		$scope.events = response.data;
-		// $scope.events.length=6;
-				// console.log($scope.events.length)
-	},function(xhr){
-		console.log(xhr)
-	})
-})
+// eventApp.controller('homeControl',function($scope,$http){
+// 	$scope.events = [];
+//
+// 	$http({
+// 		'method' : 'GET',
+// 		'url' : 'http://eventmanager-server.herokuapp.com/events',
+// 		'headers': 'Content-Type: application/json\n',
+// 		"headerData": [
+// 					{
+// 						"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
+// 						"value": "application/json",
+// 						"description": "",
+// 						"enabled": true
+// 					}
+// 				]
+// 	}).then(function(response){
+// 		$scope.events = response.data;
+// 		$scope.events.length=6;
+// 				// console.log($scope.events.length)
+// 	},function(xhr){
+// 		console.log(xhr)
+// 	})
+//
+// })
 
 eventApp.controller('eventControl',function($scope,$routeParams,$http){
 	var id = $routeParams.id;
@@ -137,6 +143,45 @@ eventApp.controller('eventControl',function($scope,$routeParams,$http){
 			// },function(xhr){
 			// 	console.log(xhr)
 			// })
+})
+eventApp.controller('pagesControl',function($scope,$routeParams,$http){
+	var id1;
+	if($routeParams=='NULL')
+	{
+		id1=1;
+	}
+	else
+		{
+			id1 = $routeParams.id1;
+		}
+				url='http://eventmanager-server.herokuapp.com/events?_page='+id1+'&_limit=6';
+					$http({
+						'method' : 'GET',
+						'url' : url,
+						'headers': 'Content-Type: application/json\n',
+						"headerData": [
+									{
+										"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
+										"value": "application/json",
+										"description": "",
+										"enabled": true
+									}
+								]
+					}).then(function(response){
+						$scope.events=[];
+							$scope.events=response.data;
+						// $scope.events.length=6;
+								// console.log($scope.events)
+								// location.reload()
+					},function(xhr){
+						console.log(xhr)
+					})
+
+					if(id1>3)
+					{
+						alert("Page Not Found")
+					}
+
 })
 
 eventApp.controller('addeventControl',function($scope,$http){

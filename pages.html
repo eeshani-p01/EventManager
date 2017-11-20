@@ -1,4 +1,4 @@
-<div id="home" ng-controller="homeControl">
+<div id="home"  ng-controller="pagesControl">
 		<div class="header">
 			<div class="search-bar">
             <form>
@@ -26,17 +26,24 @@
 				</a>
 			</div>
 		</div>
+    <div ng-hide="events">
+	      <div class="error">
+	        <img src="https://ih1.redbubble.net/image.101121317.0149/flat,800x800,070,f.u2.jpg" width="22%" height="30%">
+	        <h1>404 Page Not Found</h1>
+	        <h4>This is not webpage you are looking for</h4>
+	      </div>
+	  </div>
 		<div>
 		<nav aria-label="Page navigation">
-			<ul class="pagination">
+			<ul class="pagination justify-content-center">
 				<li>
 					<a href="#" aria-label="Previous">
 						<span aria-hidden="true">&laquo;</span>
 					</a>
 				</li>
-				<li class="active"><a href="#!/pages/1">1</a></li>
+				<li><a href="#!/pages/1">1</a></li>
 				<li><a href="#!/pages/2">2</a></li>
-				<li><a href="#!/pages/3">3</a></li>
+        <li><a href="#!/pages/3">3</a></li>
 				<li>
 					<a href="#" aria-label="Next">
 						<span aria-hidden="true">&raquo;</span>
@@ -45,11 +52,5 @@
 			</ul>
 		</nav>
 	</div>
-		<div ng-hide="events">
-	      <div class="error">
-	        <img src="https://ih1.redbubble.net/image.101121317.0149/flat,800x800,070,f.u2.jpg" width="22%" height="30%">
-	        <h1>404 Page Not Found</h1>
-	        <h4>This is not webpage you are looking for</h4>
-	      </div>
-	  </div>
+
 	</div>
