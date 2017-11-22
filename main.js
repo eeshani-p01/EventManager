@@ -212,25 +212,31 @@ eventApp.controller('addeventControl',function($scope,$http){
 		}
 		// console.log(data1)
 //to http method to post the new event
-			$http({
-				'method' : 'POST',
-				'url' : 'http://eventmanager-server.herokuapp.com/events',
-				'headers': 'Content-Type: application/json\n',
-				"headerData": [
-							{
-								"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
-								"value": "application/json",
-								"description": "",
-								"enabled": true
-							}
-						],
-				'data':data1					//data to be send
-			}).then(function(response){
-				$scope.events = response.data;
-			},function(xhr){
-				console.log(xhr)
-			})
 
+			if(angular.isNumber(prize)=="True")
+			{
+					$http({
+						'method' : 'POST',
+						'url' : 'http://eventmanager-server.herokuapp.com/events',
+						'headers': 'Content-Type: application/json\n',
+						"headerData": [
+									{
+										"key": "d681cbb9-fb83-1f2e-746a-57da0f33ef98",
+										"value": "application/json",
+										"description": "",
+										"enabled": true
+									}
+								],
+						'data':data1					//data to be send
+					}).then(function(response){
+						$scope.events = response.data;
+					},function(xhr){
+						console.log(xhr)
+					})
+				}
+				else{
+					alert("Cost must be a number!!!");
+				}
 
 	}
 

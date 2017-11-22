@@ -14,10 +14,13 @@
           <!-- Div to enter the new coment to be added -->
               <div class="media make_comment">
                 <div id="write">Write a Comment</div>
-                < div class="media-body">
+                <div class="media-body">
                   <form name="rev">
                     <div class="form-group">
-                        <input class="form-control" required="" required name="comment" ng-model="user.comment" placeholder="Write a comment..." style="width:100%;">
+                        <input class="form-control" required="" required maxlength="71" ng-maxlength="70" name="comment" ng-model="user.comment" placeholder="Write a comment..." style="width:100%;">
+                        <div ng-show="rev.comment.$error.maxlength">
+                            *Comment is too long!!!
+                        </div>
                         <a href= "#!/event/{{eventDetails.id}}">
                           <button type="submit" class="btn btn-primary" ng-disabled="rev.$invalid" ng-click="comment()">Comment</button>
                         </a>

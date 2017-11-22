@@ -1,29 +1,44 @@
 <div id="addevent" ng-controller="addeventControl">
   <div class="back"></div>
+
+  <!-- Form start -->
   <div class="dialog">
     <form id ="dial" name="addeve">
+      <!-- Dialog heading -->
       <div id="head">
         <h3>Your Event </h3>
       </div>
+      <!-- Form title input -->
       <div class="form-group">
         <label for="title">Event Name:</label>
-        <input type="text" class="form-control" id="title" required placeholder="Enter your event name" name="title" ng-model="eve.title">
-        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email w</small> -->
+        <input type="text" class="form-control" id="title" required minlength="4" placeholder="Enter your event name" name="title" ng-model="eve.title">
+         <div ng-show="addeve.title.$error.minlength">
+           *Title must be at least 4 characters long.
+         </div>
       </div>
+      <!-- Form date input -->
       <div class="form-group">
         <label for="date">Event On:</label>
-        <input type="text" class="form-control" id="date" required placeholder="Enter the event date" name="date" ng-model="eve.date">
+        <input type="text" class="form-control" id="date" required minlength="10" placeholder="e.g.  January 1, 2017" name="date" ng-model="eve.date">
+        <div ng-show="addeve.date.$error.minlength">
+          *Date must be at least 10 characters long.
+        </div>
         <!-- <div ng-show="addeve.date.$error.required">Required!</div> -->
       </div>
+      <!-- Form price input -->
       <div class="form-group">
         <label for="cost">Cost of event:</label>
         <input type="text" class="form-control" id="cost" required placeholder="Enter the ticket price" name="price" ng-model="eve.price">
-        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email w</small> -->
       </div>
+        <!-- Form host input -->
       <div class="form-group">
         <label for="host">Event host:</label>
-        <input type="text" class="form-control" id="host" required placeholder="Enter the name of organizer" name="organizer" ng-model="eve.organizer">
+        <input type="text" class="form-control" id="host" required minlength="3" placeholder="Enter the name of organizer" name="organizer" ng-model="eve.organizer">
+        <div ng-show="addeve.organizer.$error.minlength">
+           *Must be at least 3 characters long.
+        </div>
       </div>
+      <!-- Form submit button -->
       <a href="#!/" ng-disabled="LoginForm.$invalid">
         <button type="submit" class="btn btn-primary" ng-disabled="addeve.$invalid" ng-click="sendata()">Submit</button>
       </a>

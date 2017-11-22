@@ -332,8 +332,18 @@ color:gray;
 #dial input.ng-invalid.ng-touched.ng-pristine{
   border:1px solid red;
 }
+input.ng-valid-maxlength{
+	border:1px solid red;
+}
+input.ng-invalid-minlength{
+	border:1px solid red;
+}
+
 #dial input.ng-valid{
   border:1px solid green;
+}
+.row .panel-footer .media.make_comment .media-body .form-group div{
+	color:red;
 }
 .back{
 	background: url("https://ak7.picdn.net/shutterstock/videos/3191017/thumb/1.jpg");
@@ -453,7 +463,6 @@ color:gray;
 }
 #comm.media .media-body{
 	border-bottom: 1px solid #d3d3d3;
-
 }
 #comm.media{
 	padding-left:3%;
